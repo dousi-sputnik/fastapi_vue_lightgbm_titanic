@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  node:
+    # コンテナ名
+    container_name: node
+
+    # docker image を作成するときの指示をするファイル(Dockerfile)の場所を指定
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+
+    # こうしておくことで後で3000ポートからアクセスする
+    ports:
+      - 4000:4000
+
+    # docker 内のディレクトリと同期させるディレクトリ
+    # ディレクトリが存在しない場合は勝手に作成される。
+    volumes:
+      - ./app/node:/app
+    tty: true
+
+  python:
+    container_name: python
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    ports:
+      - 8080:8080
+    tty: true
+    volumes:
+      - ./app/python/:/app
