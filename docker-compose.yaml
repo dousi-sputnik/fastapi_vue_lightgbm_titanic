@@ -10,7 +10,8 @@ services:
       context: .
       dockerfile: ./docker/node/Dockerfile
 
-    # こうしておくことで後で3000ポートからアクセスする
+    # こうしておくことで後で4000ポートからアクセスする
+    # ポート番号については適宜変更をしてください
     ports:
       - 4000:4000
 

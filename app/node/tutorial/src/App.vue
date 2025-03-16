@@ -128,25 +128,36 @@ const displayOutput = (): void => {
 
 <template>
   <div class="navbar bg-blue-400 shadow-sw">
-    VueとFastAPIによる機械学習アプリ
+    <div class="flex flex-col">
+      <span class="text-xl font-bold"
+        >タイタニック号: AIは見た! あなたの生存確率</span
+      >
+      <span class="text-sm">-VueとFastAPIによる機械学習アプリ-</span>
+    </div>
   </div>
   <!-- containerとmx-autoは「左右の余白をいい感じに調整してください」と指示している
   セットで覚える -->
   <div class="container mx-auto mt-4">
-    <select class="select select-primary mb-4" v-model="features.Pclass">
+    <label class="label">階級</label>
+    <br />
+    <select class="select select-primary mb-1" v-model="features.Pclass">
       <option disabled selected>階級</option>
       <option>上層クラス (資産階級)</option>
       <option>中層クラス (一般階級)</option>
       <option>下層クラス (労働階級)</option>
     </select>
     <br />
-    <select class="select select-primary mb-4" v-model="features.Sex">
+    <label class="label">性別</label>
+    <br />
+    <select class="select select-primary mb-1" v-model="features.Sex">
       <option disabled selected>性別</option>
       <option>男性</option>
       <option>女性</option>
     </select>
     <br />
-    <select class="select select-primary mb-4" v-model="features.Age">
+    <label class="label">年齢</label>
+    <br />
+    <select class="select select-primary mb-1" v-model="features.Age">
       <option disabled selected>年齢</option>
       <!-- ...はスプレッド構文を使用して、イテレータによって生成された値を新しい配列に展開する。
       結果として、0-120までの数値を含む配列を作成される。
@@ -156,19 +167,25 @@ const displayOutput = (): void => {
       </option>
     </select>
     <br />
-    <select class="select select-primary mb-4" v-model="features.SibSp">
+    <label class="label">兄弟姉妹の同伴数</label>
+    <br />
+    <select class="select select-primary mb-1" v-model="features.SibSp">
       <option disabled selected>兄弟姉妹の同伴数</option>
       <option v-for="i in [...Array(11).keys()]">
         {{ i }}
       </option>
     </select>
     <br />
-    <select class="select select-primary mb-4" v-model="features.Parch">
+    <label class="label">親・子の同伴数</label>
+    <br />
+    <select class="select select-primary mb-1" v-model="features.Parch">
       <option disabled selected>親・子の同伴数</option>
       <option v-for="i in [...Array(11).keys()]">
         {{ i }}
       </option>
     </select>
+    <br />
+    <label class="label">運賃($)</label>
     <br />
     <select class="select select-primary mb-4" v-model="features.Fare">
       <option disabled selected>運賃($)</option>
@@ -177,10 +194,12 @@ const displayOutput = (): void => {
       </option>
     </select>
     <br />
-    <button class="btn btn-primary" @click="displayOutput()">生存率推定</button>
+    <button class="btn btn-primary mb-2" @click="displayOutput()">
+      生存率推定
+    </button>
     <!-- <template></template>は<div></div>と異なり、まとまりを作るだけで、最終的なソースコードからはタグが消失する特徴がある -->
     <template v-if="survivalProbability !== undefined">
-      <div class="alert alert-error mt-4">
+      <div class="alert alert-error">
         あなたの生存確率は {{ Math.round(survivalProbability) }} % です。
       </div>
     </template>
