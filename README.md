@@ -37,7 +37,7 @@ Vue3とFastAPIを使用し、lightgbmベースでタイタニック問題の生�
 ## アプリの操作方法
 階級、性別、年齢、兄弟姉妹の同伴数、親子の同伴数、運賃の6つの項目を選択し、生存率推定を行えば生存率が表示されます。
 
-<img width="440" alt="26歳男性労働者階級ぼっちの場合" src="https://github.com/user-attachments/assets/b988e9a1-d584-4278-a61a-76d380706555" />
+<img width="440" alt="26歳男性労働者階級ぼっちの場合" src="https://github.com/user-attachments/assets/5048b4e9-9749-4dff-87a8-36feba19e096" />
 
 
 ## 参考文献
