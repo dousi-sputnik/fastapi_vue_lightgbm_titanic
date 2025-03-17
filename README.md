@@ -39,6 +39,10 @@ Vue3とFastAPIを使用し、lightgbmベースでタイタニック問題の生�
 
 <img width="440" alt="26歳男性労働者階級ぼっちの場合" src="https://github.com/user-attachments/assets/5048b4e9-9749-4dff-87a8-36feba19e096" />
 
+### 操作中のGIF
+![FastAPIとVueの機械学習アプリ](https://github.com/user-attachments/assets/6cfe634c-b476-4d3d-ab96-8290685a597f)
+
+
 
 ## 参考文献
 - Vue.js FastAPI によるAIアプリ開発入門
